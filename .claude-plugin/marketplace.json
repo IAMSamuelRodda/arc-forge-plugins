@@ -1,6 +1,6 @@
 {
   "name": "arc-forge-plugins",
-  "owner": "Arc Forge",
+  "owner": "Samuel Rodda",
   "strict": false,
   "plugins": [
     {
@@ -8,45 +8,45 @@
       "source": "https://github.com/IAMSamuelRodda/mcp-proxy",
       "version": "1.0.0",
       "description": "Aggregating MCP proxy with 95% context reduction via progressive disclosure (2 meta-tools instead of 100+ tools)",
-      "author": "Arc Forge",
+      "author": "Samuel Rodda",
       "homepage": "https://github.com/IAMSamuelRodda/mcp-proxy",
-      "keywords": ["mcp", "proxy", "aggregator", "context-optimization", "lazy-loading"]
+      "keywords": ["mcp", "proxy", "aggregator", "context-optimization", "token-reduction", "progressive-disclosure", "claude-code", "anthropic"]
     },
     {
       "name": "vikunja-mcp",
       "source": "https://github.com/IAMSamuelRodda/vikunja-mcp",
       "version": "1.0.0",
       "description": "Vikunja task management with CRUD, labels, reminders, and cursor-based pagination",
-      "author": "Arc Forge",
+      "author": "Samuel Rodda",
       "homepage": "https://github.com/IAMSamuelRodda/vikunja-mcp",
-      "keywords": ["vikunja", "tasks", "productivity", "gtd", "self-hosted"]
+      "keywords": ["vikunja", "tasks", "productivity", "gtd", "self-hosted", "open-source", "project-management", "todo"]
     },
     {
       "name": "todoist-mcp",
       "source": "https://github.com/IAMSamuelRodda/todoist-mcp",
       "version": "1.0.0",
       "description": "Todoist integration with natural language dates, filters, and project management",
-      "author": "Arc Forge",
+      "author": "Samuel Rodda",
       "homepage": "https://github.com/IAMSamuelRodda/todoist-mcp",
-      "keywords": ["todoist", "tasks", "productivity"]
+      "keywords": ["todoist", "tasks", "productivity", "todo", "api-integration", "natural-language", "task-management"]
     },
     {
       "name": "youtube-transcript-mcp",
       "source": "https://github.com/IAMSamuelRodda/youtube-transcript-mcp",
       "version": "1.0.0",
       "description": "YouTube transcript extraction (plain text + timed) without API keys",
-      "author": "Arc Forge",
+      "author": "Samuel Rodda",
       "homepage": "https://github.com/IAMSamuelRodda/youtube-transcript-mcp",
-      "keywords": ["youtube", "transcripts", "video", "research"]
+      "keywords": ["youtube", "transcripts", "video", "research", "content-extraction", "no-api-key", "subtitles", "captions"]
     },
     {
       "name": "cloudflare-mcp",
       "source": "https://github.com/IAMSamuelRodda/cloudflare-mcp",
       "version": "1.0.0",
       "description": "Cloudflare DNS zone and record management",
-      "author": "Arc Forge",
+      "author": "Samuel Rodda",
       "homepage": "https://github.com/IAMSamuelRodda/cloudflare-mcp",
-      "keywords": ["cloudflare", "dns", "infrastructure", "devops"]
+      "keywords": ["cloudflare", "dns", "infrastructure", "devops", "domain-management", "api-integration", "cloud"]
     }
   ]
 }

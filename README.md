@@ -94,4 +94,4 @@ MIT License - See individual repositories for details.
 
 ---
 
-*Built by [Arc Forge](https://github.com/IAMSamuelRodda) - Engineering tools for the AI era*
+*Built by [Samuel Rodda](https://github.com/IAMSamuelRodda) - Engineering tools for the AI era*
