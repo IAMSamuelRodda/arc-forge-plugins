@@ -1,0 +1,52 @@
+{
+  "name": "arc-forge-plugins",
+  "owner": "Arc Forge",
+  "strict": false,
+  "plugins": [
+    {
+      "name": "mcp-proxy",
+      "source": "https://github.com/IAMSamuelRodda/mcp-proxy",
+      "version": "1.0.0",
+      "description": "Aggregating MCP proxy with 95% context reduction via progressive disclosure (2 meta-tools instead of 100+ tools)",
+      "author": "Arc Forge",
+      "homepage": "https://github.com/IAMSamuelRodda/mcp-proxy",
+      "keywords": ["mcp", "proxy", "aggregator", "context-optimization", "lazy-loading"]
+    },
+    {
+      "name": "vikunja-mcp",
+      "source": "https://github.com/IAMSamuelRodda/vikunja-mcp",
+      "version": "1.0.0",
+      "description": "Vikunja task management with CRUD, labels, reminders, and cursor-based pagination",
+      "author": "Arc Forge",
+      "homepage": "https://github.com/IAMSamuelRodda/vikunja-mcp",
+      "keywords": ["vikunja", "tasks", "productivity", "gtd", "self-hosted"]
+    },
+    {
+      "name": "todoist-mcp",
+      "source": "https://github.com/IAMSamuelRodda/todoist-mcp",
+      "version": "1.0.0",
+      "description": "Todoist integration with natural language dates, filters, and project management",
+      "author": "Arc Forge",
+      "homepage": "https://github.com/IAMSamuelRodda/todoist-mcp",
+      "keywords": ["todoist", "tasks", "productivity"]
+    },
+    {
+      "name": "youtube-transcript-mcp",
+      "source": "https://github.com/IAMSamuelRodda/youtube-transcript-mcp",
+      "version": "1.0.0",
+      "description": "YouTube transcript extraction (plain text + timed) without API keys",
+      "author": "Arc Forge",
+      "homepage": "https://github.com/IAMSamuelRodda/youtube-transcript-mcp",
+      "keywords": ["youtube", "transcripts", "video", "research"]
+    },
+    {
+      "name": "cloudflare-mcp",
+      "source": "https://github.com/IAMSamuelRodda/cloudflare-mcp",
+      "version": "1.0.0",
+      "description": "Cloudflare DNS zone and record management",
+      "author": "Arc Forge",
+      "homepage": "https://github.com/IAMSamuelRodda/cloudflare-mcp",
+      "keywords": ["cloudflare", "dns", "infrastructure", "devops"]
+    }
+  ]
+}

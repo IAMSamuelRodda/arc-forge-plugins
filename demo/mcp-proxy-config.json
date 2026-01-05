@@ -1,0 +1,55 @@
+{
+  "mcpProxy": {
+    "hierarchyPath": "${MCP_PROXY_DIR}/hierarchy",
+    "options": {
+      "lazyLoad": true,
+      "preloadAll": true
+    }
+  },
+  "mcpServers": {
+    "vikunja": {
+      "source": {
+        "type": "git",
+        "url": "https://github.com/IAMSamuelRodda/vikunja-mcp.git"
+      },
+      "transportType": "stdio",
+      "command": "${MCP_SERVERS_DIR}/vikunja-mcp/.venv/bin/python",
+      "args": ["-m", "src.server"],
+      "cwd": "${MCP_SERVERS_DIR}/vikunja-mcp",
+      "envFile": "${MCP_SERVERS_DIR}/vikunja-mcp/.env",
+      "options": { "lazyLoad": true }
+    },
+    "todoist": {
+      "source": {
+        "type": "git",
+        "url": "https://github.com/IAMSamuelRodda/todoist-mcp.git"
+      },
+      "transportType": "stdio",
+      "command": "${MCP_SERVERS_DIR}/todoist-mcp/.venv/bin/python",
+      "args": ["${MCP_SERVERS_DIR}/todoist-mcp/todoist_mcp.py"],
+      "envFile": "${MCP_SERVERS_DIR}/todoist-mcp/.env",
+      "options": { "lazyLoad": true }
+    },
+    "youtube-transcript": {
+      "source": {
+        "type": "git",
+        "url": "https://github.com/IAMSamuelRodda/youtube-transcript-mcp.git"
+      },
+      "transportType": "stdio",
+      "command": "${MCP_SERVERS_DIR}/youtube-transcript-mcp/.venv/bin/python",
+      "args": ["${MCP_SERVERS_DIR}/youtube-transcript-mcp/server.py"],
+      "options": { "lazyLoad": true }
+    },
+    "cloudflare": {
+      "source": {
+        "type": "git",
+        "url": "https://github.com/IAMSamuelRodda/cloudflare-mcp.git"
+      },
+      "transportType": "stdio",
+      "command": "${MCP_SERVERS_DIR}/cloudflare-mcp/.venv/bin/python",
+      "args": ["${MCP_SERVERS_DIR}/cloudflare-mcp/server.py"],
+      "envFile": "${MCP_SERVERS_DIR}/cloudflare-mcp/.env",
+      "options": { "lazyLoad": true }
+    }
+  }
+}
