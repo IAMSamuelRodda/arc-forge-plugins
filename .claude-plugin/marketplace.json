@@ -12,8 +12,8 @@
     {
       "name": "mcp-proxy",
       "source": {
-        "source": "github",
-        "repo": "IAMSamuelRodda/mcp-proxy"
+        "source": "url",
+        "url": "https://github.com/IAMSamuelRodda/mcp-proxy.git"
       },
       "version": "1.0.0",
       "description": "Aggregating MCP proxy with 95% context reduction via progressive disclosure (2 meta-tools instead of 100+ tools)",
@@ -26,8 +26,8 @@
     {
       "name": "vikunja-mcp",
       "source": {
-        "source": "github",
-        "repo": "IAMSamuelRodda/vikunja-mcp"
+        "source": "url",
+        "url": "https://github.com/IAMSamuelRodda/vikunja-mcp.git"
       },
       "version": "1.0.0",
       "description": "Vikunja task management with CRUD, labels, reminders, and cursor-based pagination",
@@ -40,8 +40,8 @@
     {
       "name": "todoist-mcp",
       "source": {
-        "source": "github",
-        "repo": "IAMSamuelRodda/todoist-mcp"
+        "source": "url",
+        "url": "https://github.com/IAMSamuelRodda/todoist-mcp.git"
       },
       "version": "1.0.0",
       "description": "Todoist integration with natural language dates, filters, and project management",
@@ -54,8 +54,8 @@
     {
       "name": "youtube-transcript-mcp",
       "source": {
-        "source": "github",
-        "repo": "IAMSamuelRodda/youtube-transcript-mcp"
+        "source": "url",
+        "url": "https://github.com/IAMSamuelRodda/youtube-transcript-mcp.git"
       },
       "version": "1.0.0",
       "description": "YouTube transcript extraction (plain text + timed) without API keys",
@@ -68,8 +68,8 @@
     {
       "name": "cloudflare-mcp",
       "source": {
-        "source": "github",
-        "repo": "IAMSamuelRodda/cloudflare-mcp"
+        "source": "url",
+        "url": "https://github.com/IAMSamuelRodda/cloudflare-mcp.git"
       },
       "version": "1.0.0",
       "description": "Cloudflare DNS zone and record management",
