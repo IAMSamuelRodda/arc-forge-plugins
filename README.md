@@ -12,18 +12,16 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 source ~/.bashrc  # or restart terminal
 ```
 
-**Set credentials** in your Claude Code MCP config (`~/.claude.json`):
+**Set credentials** in `~/.claude.json`:
 
-After installing a plugin, add your credentials directly to the server config:
+After installing a plugin, find the server entry in `mcpServers` and add an `env` block:
 ```json
-{
-  "mcpServers": {
-    "vikunja": {
-      "env": {
-        "VIKUNJA_URL": "https://your-instance.com",
-        "VIKUNJA_TOKEN": "your-api-token"
-      }
-    }
+"vikunja": {
+  "command": "uvx",
+  "args": ["--from", "git+https://github.com/...", "vikunja-mcp"],
+  "env": {
+    "VIKUNJA_URL": "https://your-instance.com",
+    "VIKUNJA_TOKEN": "your-api-token"
   }
 }
 ```
