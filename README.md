@@ -13,21 +13,30 @@ source ~/.bashrc  # or restart terminal
 ```
 
 **Set environment variables** for the plugins you want to use:
-```bash
-# Add to ~/.bashrc or ~/.zshrc
 
-# vikunja-mcp
+Option A: **direnv** (recommended - auto-loads per directory):
+```bash
+# Install: sudo apt install direnv
+# Add to ~/.bashrc: eval "$(direnv hook bash)"
+
+# Create ~/.envrc with your credentials
+cat >> ~/.envrc << 'EOF'
 export VIKUNJA_URL="https://your-instance.com"
 export VIKUNJA_TOKEN="your-api-token"
-
-# todoist-mcp
 export TODOIST_API_TOKEN="your-token"
-
-# cloudflare-mcp
 export CLOUDFLARE_API_TOKEN="your-token"
+EOF
 
-# youtube-transcript-mcp - no credentials needed!
+direnv allow ~/.envrc
 ```
+
+Option B: **Per-session** (most secure - doesn't persist):
+```bash
+export VIKUNJA_URL="https://your-instance.com"
+export VIKUNJA_TOKEN="your-api-token"
+```
+
+> **Note**: youtube-transcript-mcp requires no credentials.
 
 ### 2. Add Marketplace
 
