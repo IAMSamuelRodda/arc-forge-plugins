@@ -1,4 +1,4 @@
-# Arc Forge Plugins Installation Demo - Claude Code Interface
+# Arc Forge Plugins Installation Demo
 
 ## Pre-Recording Setup
 
@@ -6,12 +6,6 @@
 2. **Increase font** - `Ctrl++` (3-4x)
 3. **OBS ready** - Window capture on terminal
 4. **Ensure uv is installed**: `curl -LsSf https://astral.sh/uv/install.sh | sh`
-5. **Set credentials** (for demo, export before starting):
-   ```bash
-   export VIKUNJA_URL="https://try.vikunja.arcforge.au"
-   export VIKUNJA_TOKEN="tk_581fe5bcf3ac77e96bfed84e0b2791adff50c206"
-   ```
-   > Or add directly to `~/.claude.json` after install - see README.md
 
 ---
 
@@ -55,23 +49,36 @@ claude
 
 ---
 
-### Scene 5: Restart Claude Code (10 sec)
+### Scene 5: Add Credentials (15 sec)
 
 ```
 /exit
 ```
 
-Then restart:
+Open `~/.claude.json` and add credentials to the vikunja server:
+
+```json
+{
+  "mcpServers": {
+    "vikunja": {
+      "env": {
+        "VIKUNJA_URL": "https://try.vikunja.arcforge.au",
+        "VIKUNJA_TOKEN": "tk_581fe5bcf3ac77e96bfed84e0b2791adff50c206"
+      }
+    }
+  }
+}
+```
+
+---
+
+### Scene 6: Restart & Test (10 sec)
+
 ```bash
 claude
 ```
 
-> MCP server activates on restart (uvx downloads & runs automatically)
-
----
-
-### Scene 6: Test the Plugin (10 sec)
-
+Then test:
 ```
 List my Vikunja projects
 ```
@@ -83,45 +90,20 @@ List my Vikunja projects
 ## Recording Checklist
 
 - [ ] uv installed (`which uvx` should return path)
-- [ ] Credentials set (export or ~/.claude.json)
 - [ ] Terminal font large enough to read
 - [ ] OBS recording to MP4
 - [ ] Clear terminal before starting
 
 ## Demo Credentials
 
-For the demo, set these before recording:
-```bash
-export VIKUNJA_URL="https://try.vikunja.arcforge.au"
-export VIKUNJA_TOKEN="tk_581fe5bcf3ac77e96bfed84e0b2791adff50c206"
+```
+VIKUNJA_URL: https://try.vikunja.arcforge.au
+VIKUNJA_TOKEN: tk_581fe5bcf3ac77e96bfed84e0b2791adff50c206
 ```
 
 ## Timing Target
 
 ~60 seconds total
-
-## How It Works (uvx Pattern)
-
-The plugin uses the official Anthropic pattern:
-- `uvx` automatically creates isolated environment
-- Downloads package from git
-- Installs dependencies
-- Runs the server
-
-**No manual venv, no pip install, no setup commands.**
-
-## Commands Summary
-
-```bash
-# Add marketplace
-/plugin marketplace add IAMSamuelRodda/arc-forge-plugins
-
-# Install plugin (uvx handles everything)
-/plugin install vikunja-mcp@arc-forge-plugins
-
-# Restart for MCP activation
-/exit && claude
-```
 
 ## Troubleshooting
 
@@ -131,5 +113,5 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 source ~/.bashrc  # or restart terminal
 ```
 
-**If credentials not set:**
-Add to `~/.claude.json` under the vikunja server's `env` section, or export before starting Claude Code.
+**If plugin not working:**
+Check `~/.claude.json` has credentials in the vikunja server's `env` section.
