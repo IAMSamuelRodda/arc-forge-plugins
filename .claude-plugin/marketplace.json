@@ -1,51 +1,82 @@
 {
   "name": "arc-forge-plugins",
-  "owner": "Samuel Rodda",
-  "strict": false,
+  "owner": {
+    "name": "Samuel Rodda",
+    "email": "samuel@arcforge.au"
+  },
+  "metadata": {
+    "description": "Arc Forge MCP server collection for Claude Code",
+    "version": "1.0.0"
+  },
   "plugins": [
     {
       "name": "mcp-proxy",
-      "source": "https://github.com/IAMSamuelRodda/mcp-proxy",
+      "source": {
+        "source": "github",
+        "repo": "IAMSamuelRodda/mcp-proxy"
+      },
       "version": "1.0.0",
       "description": "Aggregating MCP proxy with 95% context reduction via progressive disclosure (2 meta-tools instead of 100+ tools)",
-      "author": "Samuel Rodda",
-      "homepage": "https://github.com/IAMSamuelRodda/mcp-proxy",
+      "author": {
+        "name": "Samuel Rodda",
+        "email": "samuel@arcforge.au"
+      },
       "keywords": ["mcp", "proxy", "aggregator", "context-optimization", "token-reduction", "progressive-disclosure", "claude-code", "anthropic"]
     },
     {
       "name": "vikunja-mcp",
-      "source": "https://github.com/IAMSamuelRodda/vikunja-mcp",
+      "source": {
+        "source": "github",
+        "repo": "IAMSamuelRodda/vikunja-mcp"
+      },
       "version": "1.0.0",
       "description": "Vikunja task management with CRUD, labels, reminders, and cursor-based pagination",
-      "author": "Samuel Rodda",
-      "homepage": "https://github.com/IAMSamuelRodda/vikunja-mcp",
+      "author": {
+        "name": "Samuel Rodda",
+        "email": "samuel@arcforge.au"
+      },
       "keywords": ["vikunja", "tasks", "productivity", "gtd", "self-hosted", "open-source", "project-management", "todo"]
     },
     {
       "name": "todoist-mcp",
-      "source": "https://github.com/IAMSamuelRodda/todoist-mcp",
+      "source": {
+        "source": "github",
+        "repo": "IAMSamuelRodda/todoist-mcp"
+      },
       "version": "1.0.0",
       "description": "Todoist integration with natural language dates, filters, and project management",
-      "author": "Samuel Rodda",
-      "homepage": "https://github.com/IAMSamuelRodda/todoist-mcp",
+      "author": {
+        "name": "Samuel Rodda",
+        "email": "samuel@arcforge.au"
+      },
       "keywords": ["todoist", "tasks", "productivity", "todo", "api-integration", "natural-language", "task-management"]
     },
     {
       "name": "youtube-transcript-mcp",
-      "source": "https://github.com/IAMSamuelRodda/youtube-transcript-mcp",
+      "source": {
+        "source": "github",
+        "repo": "IAMSamuelRodda/youtube-transcript-mcp"
+      },
       "version": "1.0.0",
       "description": "YouTube transcript extraction (plain text + timed) without API keys",
-      "author": "Samuel Rodda",
-      "homepage": "https://github.com/IAMSamuelRodda/youtube-transcript-mcp",
+      "author": {
+        "name": "Samuel Rodda",
+        "email": "samuel@arcforge.au"
+      },
       "keywords": ["youtube", "transcripts", "video", "research", "content-extraction", "no-api-key", "subtitles", "captions"]
     },
     {
       "name": "cloudflare-mcp",
-      "source": "https://github.com/IAMSamuelRodda/cloudflare-mcp",
+      "source": {
+        "source": "github",
+        "repo": "IAMSamuelRodda/cloudflare-mcp"
+      },
       "version": "1.0.0",
       "description": "Cloudflare DNS zone and record management",
-      "author": "Samuel Rodda",
-      "homepage": "https://github.com/IAMSamuelRodda/cloudflare-mcp",
+      "author": {
+        "name": "Samuel Rodda",
+        "email": "samuel@arcforge.au"
+      },
       "keywords": ["cloudflare", "dns", "infrastructure", "devops", "domain-management", "api-integration", "cloud"]
     }
   ]
