@@ -11,7 +11,7 @@
    export VIKUNJA_URL="https://try.vikunja.arcforge.au"
    export VIKUNJA_TOKEN="tk_581fe5bcf3ac77e96bfed84e0b2791adff50c206"
    ```
-   > For persistent setup, use `CLAUDE_ENV_FILE` - see README.md
+   > For persistent setup, add to ~/.bashrc or use direnv - see README.md
 
 ---
 

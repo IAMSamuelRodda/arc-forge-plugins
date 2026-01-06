@@ -12,31 +12,26 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 source ~/.bashrc  # or restart terminal
 ```
 
-**Set environment variables** for the plugins you want to use:
+**Set environment variables** before launching Claude Code:
 
-Option A: **CLAUDE_ENV_FILE** (Claude Code native - sources before each session):
+Option A: **Shell profile** (~/.bashrc or ~/.zshrc):
 ```bash
-# Create credentials file
-cat > ~/.claude-env << 'EOF'
+# Add to ~/.bashrc
+cat >> ~/.bashrc << 'EOF'
 export VIKUNJA_URL="https://your-instance.com"
 export VIKUNJA_TOKEN="your-api-token"
 export TODOIST_API_TOKEN="your-token"
 export CLOUDFLARE_API_TOKEN="your-token"
 EOF
-chmod 600 ~/.claude-env
-
-# Tell Claude Code to source it
-echo 'export CLAUDE_ENV_FILE=~/.claude-env' >> ~/.bashrc
 source ~/.bashrc
 ```
 
-Option B: **direnv** (auto-loads per directory):
+Option B: **direnv** (auto-loads per directory, more secure):
 ```bash
 # Install: sudo apt install direnv
 # Add to ~/.bashrc: eval "$(direnv hook bash)"
 
-# Create ~/.envrc with your credentials
-cat >> ~/.envrc << 'EOF'
+cat > ~/.envrc << 'EOF'
 export VIKUNJA_URL="https://your-instance.com"
 export VIKUNJA_TOKEN="your-api-token"
 export TODOIST_API_TOKEN="your-token"
@@ -52,6 +47,8 @@ export VIKUNJA_URL="https://your-instance.com"
 export VIKUNJA_TOKEN="your-api-token"
 ```
 
+> **How it works**: Plugin configs use `${VAR}` syntax which Claude Code expands from your environment at runtime.
+>
 > **Note**: youtube-transcript-mcp requires no credentials.
 
 ### 2. Add Marketplace
