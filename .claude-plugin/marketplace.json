@@ -29,7 +29,7 @@
         "source": "url",
         "url": "https://github.com/IAMSamuelRodda/vikunja-mcp.git"
       },
-      "version": "1.0.0",
+      "version": "1.1.0",
       "description": "Vikunja task management with CRUD, labels, reminders, and cursor-based pagination",
       "author": {
         "name": "Samuel Rodda",
