@@ -21,24 +21,7 @@ claude mcp list
 
 ---
 
-### Scene 2: Clone Marketplace (10 sec)
-
-```bash
-git clone https://github.com/IAMSamuelRodda/arc-forge-plugins.git
-cd arc-forge-plugins
-```
-
----
-
-### Scene 3: Browse Available Plugins (5 sec)
-
-```bash
-cat .claude-plugin/marketplace.json | jq '.plugins[] | {name, description}'
-```
-
----
-
-### Scene 4: Start Claude Code (5 sec)
+### Scene 2: Start Claude Code (5 sec)
 
 ```bash
 claude
@@ -46,13 +29,35 @@ claude
 
 ---
 
-### Scene 5: Ask Claude to Install (type this in Claude Code)
+### Scene 3: Add the Marketplace (10 sec)
+
+Type in Claude Code:
 
 ```
-Install the vikunja-mcp plugin from this marketplace
+/plugin marketplace add IAMSamuelRodda/arc-forge-plugins
 ```
 
-> Claude will read the marketplace.json, clone vikunja-mcp, and run install.sh
+> Registers the Arc Forge plugin catalog
+
+---
+
+### Scene 4: Browse Available Plugins (5 sec)
+
+```
+/plugin
+```
+
+> Navigate to "Discover" tab to see available plugins
+
+---
+
+### Scene 5: Install Vikunja MCP (10 sec)
+
+```
+/plugin install vikunja-mcp@arc-forge-plugins
+```
+
+> Claude will clone and set up the plugin
 
 ---
 
@@ -71,34 +76,49 @@ Then re-run install when Claude prompts.
 
 ---
 
-### Scene 7: Verify Installation
+### Scene 7: Verify Installation (5 sec)
 
 ```
-Show my registered MCP servers
+/plugin
 ```
 
-> Or exit and run: `claude mcp list`
+> Navigate to "Installed" tab to confirm vikunja-mcp is active
 
 ---
 
-### Scene 8: Test the Plugin
+### Scene 8: Test the Plugin (10 sec)
 
 ```
 List my Vikunja projects
 ```
 
-> Shows actual projects from your Vikunja instance
+> Shows actual projects from the demo Vikunja instance
 
 ---
 
 ## Recording Checklist
 
 - [ ] Terminal font large enough to read
-- [ ] Vikunja credentials ready (URL + token)
-- [ ] Demo Vikunja instance has sample projects
+- [ ] Vikunja demo credentials ready
 - [ ] OBS recording to MP4
 - [ ] Clear terminal before starting
 
 ## Timing Target
 
 ~60-90 seconds total
+
+## Commands Summary
+
+```bash
+# Add marketplace
+/plugin marketplace add IAMSamuelRodda/arc-forge-plugins
+
+# List marketplaces
+/plugin marketplace list
+
+# Install a plugin
+/plugin install vikunja-mcp@arc-forge-plugins
+
+# Interactive plugin manager
+/plugin
+```
