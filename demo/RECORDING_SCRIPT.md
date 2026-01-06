@@ -5,6 +5,11 @@
 1. **Clean terminal** - `clear`
 2. **Increase font** - `Ctrl++` (3-4x)
 3. **OBS ready** - Window capture on terminal
+4. **Set env vars first** (before recording):
+   ```bash
+   export VIKUNJA_URL="https://try.vikunja.arcforge.au"
+   export VIKUNJA_TOKEN="tk_581fe5bcf3ac77e96bfed84e0b2791adff50c206"
+   ```
 
 ---
 
@@ -38,52 +43,42 @@ claude
 
 ---
 
-### Scene 4: Browse Available Plugins (5 sec)
-
-```
-/plugin
-```
-
-> Navigate to "Discover" tab to see available plugins
-
----
-
-### Scene 5: Install Vikunja MCP (10 sec)
+### Scene 4: Install Vikunja MCP (10 sec)
 
 ```
 /plugin install vikunja-mcp@arc-forge-plugins
 ```
 
-> Claude will clone and set up the plugin via HTTPS
+> Clones the plugin
 
 ---
 
-### Scene 6: Provide Credentials (when prompted)
+### Scene 5: Run Setup Command (15 sec)
 
-Edit `config.json` with these demo credentials:
-
-```json
-{
-  "vikunja_url": "https://try.vikunja.arcforge.au",
-  "vikunja_token": "tk_581fe5bcf3ac77e96bfed84e0b2791adff50c206"
-}
+```
+/vikunja-mcp:setup
 ```
 
-Then re-run install when Claude prompts.
+> This creates the Python venv and installs dependencies
 
 ---
 
-### Scene 7: Verify Installation (5 sec)
+### Scene 6: Exit and Restart (10 sec)
 
 ```
-/plugin
+/exit
 ```
 
-> Navigate to "Installed" tab to confirm vikunja-mcp is active
+Then restart:
+```bash
+claude
+```
+
+> MCP server activates on restart
 
 ---
 
-### Scene 8: Test the Plugin (10 sec)
+### Scene 7: Test the Plugin (10 sec)
 
 ```
 List my Vikunja projects
@@ -95,9 +90,18 @@ List my Vikunja projects
 
 ## Recording Checklist
 
+- [ ] Environment variables set BEFORE starting Claude Code
 - [ ] Terminal font large enough to read
 - [ ] OBS recording to MP4
 - [ ] Clear terminal before starting
+
+## Environment Variables
+
+Set these before recording:
+```bash
+export VIKUNJA_URL="https://try.vikunja.arcforge.au"
+export VIKUNJA_TOKEN="tk_581fe5bcf3ac77e96bfed84e0b2791adff50c206"
+```
 
 ## Timing Target
 
@@ -109,28 +113,13 @@ List my Vikunja projects
 # Add marketplace
 /plugin marketplace add IAMSamuelRodda/arc-forge-plugins
 
-# List marketplaces
-/plugin marketplace list
-
-# Refresh marketplace (if needed)
-/plugin marketplace update arc-forge-plugins
-
-# Install a plugin
+# Install plugin
 /plugin install vikunja-mcp@arc-forge-plugins
 
-# Interactive plugin manager
-/plugin
-```
+# Run setup (creates venv, installs deps)
+/vikunja-mcp:setup
 
-## Troubleshooting
-
-If you get SSH permission errors, the marketplace may be cached. Run:
-```
-/plugin marketplace update arc-forge-plugins
-```
-
-Or remove and re-add:
-```
-/plugin marketplace remove arc-forge-plugins
-/plugin marketplace add IAMSamuelRodda/arc-forge-plugins
+# Restart Claude Code for MCP to activate
+/exit
+claude
 ```
