@@ -58,8 +58,16 @@ Install the vikunja-mcp plugin from this marketplace
 
 ### Scene 6: Provide Credentials (when prompted)
 
-- Edit `config.json` with your Vikunja URL and token
-- Re-run install when Claude prompts
+Edit `config.json` with these demo credentials:
+
+```json
+{
+  "vikunja_url": "https://try.vikunja.arcforge.au",
+  "vikunja_token": "tk_581fe5bcf3ac77e96bfed84e0b2791adff50c206"
+}
+```
+
+Then re-run install when Claude prompts.
 
 ---
 
