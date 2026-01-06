@@ -12,42 +12,23 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 source ~/.bashrc  # or restart terminal
 ```
 
-**Set environment variables** before launching Claude Code:
+**Set credentials** in your Claude Code MCP config (`~/.claude.json`):
 
-Option A: **Shell profile** (~/.bashrc or ~/.zshrc):
-```bash
-# Add to ~/.bashrc
-cat >> ~/.bashrc << 'EOF'
-export VIKUNJA_URL="https://your-instance.com"
-export VIKUNJA_TOKEN="your-api-token"
-export TODOIST_API_TOKEN="your-token"
-export CLOUDFLARE_API_TOKEN="your-token"
-EOF
-source ~/.bashrc
+After installing a plugin, add your credentials directly to the server config:
+```json
+{
+  "mcpServers": {
+    "vikunja": {
+      "env": {
+        "VIKUNJA_URL": "https://your-instance.com",
+        "VIKUNJA_TOKEN": "your-api-token"
+      }
+    }
+  }
+}
 ```
 
-Option B: **direnv** (auto-loads per directory, more secure):
-```bash
-# Install: sudo apt install direnv
-# Add to ~/.bashrc: eval "$(direnv hook bash)"
-
-cat > ~/.envrc << 'EOF'
-export VIKUNJA_URL="https://your-instance.com"
-export VIKUNJA_TOKEN="your-api-token"
-export TODOIST_API_TOKEN="your-token"
-export CLOUDFLARE_API_TOKEN="your-token"
-EOF
-chmod 600 ~/.envrc
-direnv allow ~/.envrc
-```
-
-Option C: **Per-session** (most secure - doesn't persist):
-```bash
-export VIKUNJA_URL="https://your-instance.com"
-export VIKUNJA_TOKEN="your-api-token"
-```
-
-> **How it works**: Plugin configs use `${VAR}` syntax which Claude Code expands from your environment at runtime.
+> **Power users**: Configs support `${VAR}` syntax for environment variable expansion if you prefer external credential management.
 >
 > **Note**: youtube-transcript-mcp requires no credentials.
 

@@ -6,12 +6,12 @@
 2. **Increase font** - `Ctrl++` (3-4x)
 3. **OBS ready** - Window capture on terminal
 4. **Ensure uv is installed**: `curl -LsSf https://astral.sh/uv/install.sh | sh`
-5. **Set env vars** (for demo, per-session is fine):
+5. **Set credentials** (for demo, export before starting):
    ```bash
    export VIKUNJA_URL="https://try.vikunja.arcforge.au"
    export VIKUNJA_TOKEN="tk_581fe5bcf3ac77e96bfed84e0b2791adff50c206"
    ```
-   > For persistent setup, add to ~/.bashrc or use direnv - see README.md
+   > Or add directly to `~/.claude.json` after install - see README.md
 
 ---
 
@@ -83,14 +83,14 @@ List my Vikunja projects
 ## Recording Checklist
 
 - [ ] uv installed (`which uvx` should return path)
-- [ ] Environment variables set
+- [ ] Credentials set (export or ~/.claude.json)
 - [ ] Terminal font large enough to read
 - [ ] OBS recording to MP4
 - [ ] Clear terminal before starting
 
-## Environment Variables
+## Demo Credentials
 
-Set these before recording:
+For the demo, set these before recording:
 ```bash
 export VIKUNJA_URL="https://try.vikunja.arcforge.au"
 export VIKUNJA_TOKEN="tk_581fe5bcf3ac77e96bfed84e0b2791adff50c206"
@@ -131,8 +131,5 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 source ~/.bashrc  # or restart terminal
 ```
 
-**If env vars not set:**
-```bash
-export VIKUNJA_URL="https://try.vikunja.arcforge.au"
-export VIKUNJA_TOKEN="tk_581fe5bcf3ac77e96bfed84e0b2791adff50c206"
-```
+**If credentials not set:**
+Add to `~/.claude.json` under the vikunja server's `env` section, or export before starting Claude Code.
