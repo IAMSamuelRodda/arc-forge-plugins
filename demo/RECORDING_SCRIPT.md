@@ -5,7 +5,6 @@
 1. **Clean terminal** - `clear`
 2. **Increase font** - `Ctrl++` (3-4x)
 3. **OBS ready** - Window capture on terminal
-4. **Have credentials ready** - Vikunja URL + API token in clipboard/notepad
 
 ---
 
@@ -31,8 +30,6 @@ claude
 
 ### Scene 3: Add the Marketplace (10 sec)
 
-Type in Claude Code:
-
 ```
 /plugin marketplace add IAMSamuelRodda/arc-forge-plugins
 ```
@@ -57,7 +54,7 @@ Type in Claude Code:
 /plugin install vikunja-mcp@arc-forge-plugins
 ```
 
-> Claude will clone and set up the plugin
+> Claude will clone and set up the plugin via HTTPS
 
 ---
 
@@ -99,7 +96,6 @@ List my Vikunja projects
 ## Recording Checklist
 
 - [ ] Terminal font large enough to read
-- [ ] Vikunja demo credentials ready
 - [ ] OBS recording to MP4
 - [ ] Clear terminal before starting
 
@@ -116,9 +112,25 @@ List my Vikunja projects
 # List marketplaces
 /plugin marketplace list
 
+# Refresh marketplace (if needed)
+/plugin marketplace update arc-forge-plugins
+
 # Install a plugin
 /plugin install vikunja-mcp@arc-forge-plugins
 
 # Interactive plugin manager
 /plugin
+```
+
+## Troubleshooting
+
+If you get SSH permission errors, the marketplace may be cached. Run:
+```
+/plugin marketplace update arc-forge-plugins
+```
+
+Or remove and re-add:
+```
+/plugin marketplace remove arc-forge-plugins
+/plugin marketplace add IAMSamuelRodda/arc-forge-plugins
 ```
