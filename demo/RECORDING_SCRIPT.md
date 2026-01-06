@@ -5,7 +5,8 @@
 1. **Clean terminal** - `clear`
 2. **Increase font** - `Ctrl++` (3-4x)
 3. **OBS ready** - Window capture on terminal
-4. **Set env vars first** (before recording):
+4. **Ensure uv is installed**: `curl -LsSf https://astral.sh/uv/install.sh | sh`
+5. **Set env vars** (add to ~/.bashrc or run before recording):
    ```bash
    export VIKUNJA_URL="https://try.vikunja.arcforge.au"
    export VIKUNJA_TOKEN="tk_581fe5bcf3ac77e96bfed84e0b2791adff50c206"
@@ -43,27 +44,17 @@ claude
 
 ---
 
-### Scene 4: Install Vikunja MCP (10 sec)
+### Scene 4: Install Vikunja MCP (15 sec)
 
 ```
 /plugin install vikunja-mcp@arc-forge-plugins
 ```
 
-> Clones the plugin
+> Installs plugin (uvx handles dependencies automatically)
 
 ---
 
-### Scene 5: Run Setup Command (15 sec)
-
-```
-/vikunja-mcp:setup
-```
-
-> This creates the Python venv and installs dependencies
-
----
-
-### Scene 6: Exit and Restart (10 sec)
+### Scene 5: Restart Claude Code (10 sec)
 
 ```
 /exit
@@ -74,11 +65,11 @@ Then restart:
 claude
 ```
 
-> MCP server activates on restart
+> MCP server activates on restart (uvx downloads & runs automatically)
 
 ---
 
-### Scene 7: Test the Plugin (10 sec)
+### Scene 6: Test the Plugin (10 sec)
 
 ```
 List my Vikunja projects
@@ -90,7 +81,8 @@ List my Vikunja projects
 
 ## Recording Checklist
 
-- [ ] Environment variables set BEFORE starting Claude Code
+- [ ] uv installed (`which uvx` should return path)
+- [ ] Environment variables set
 - [ ] Terminal font large enough to read
 - [ ] OBS recording to MP4
 - [ ] Clear terminal before starting
@@ -105,7 +97,17 @@ export VIKUNJA_TOKEN="tk_581fe5bcf3ac77e96bfed84e0b2791adff50c206"
 
 ## Timing Target
 
-~60-90 seconds total
+~60 seconds total
+
+## How It Works (uvx Pattern)
+
+The plugin uses the official Anthropic pattern:
+- `uvx` automatically creates isolated environment
+- Downloads package from git
+- Installs dependencies
+- Runs the server
+
+**No manual venv, no pip install, no setup commands.**
 
 ## Commands Summary
 
@@ -113,13 +115,23 @@ export VIKUNJA_TOKEN="tk_581fe5bcf3ac77e96bfed84e0b2791adff50c206"
 # Add marketplace
 /plugin marketplace add IAMSamuelRodda/arc-forge-plugins
 
-# Install plugin
+# Install plugin (uvx handles everything)
 /plugin install vikunja-mcp@arc-forge-plugins
 
-# Run setup (creates venv, installs deps)
-/vikunja-mcp:setup
+# Restart for MCP activation
+/exit && claude
+```
 
-# Restart Claude Code for MCP to activate
-/exit
-claude
+## Troubleshooting
+
+**If uvx not found:**
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+source ~/.bashrc  # or restart terminal
+```
+
+**If env vars not set:**
+```bash
+export VIKUNJA_URL="https://try.vikunja.arcforge.au"
+export VIKUNJA_TOKEN="tk_581fe5bcf3ac77e96bfed84e0b2791adff50c206"
 ```
