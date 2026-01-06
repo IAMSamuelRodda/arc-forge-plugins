@@ -14,7 +14,23 @@ source ~/.bashrc  # or restart terminal
 
 **Set environment variables** for the plugins you want to use:
 
-Option A: **direnv** (recommended - auto-loads per directory):
+Option A: **CLAUDE_ENV_FILE** (Claude Code native - sources before each session):
+```bash
+# Create credentials file
+cat > ~/.claude-env << 'EOF'
+export VIKUNJA_URL="https://your-instance.com"
+export VIKUNJA_TOKEN="your-api-token"
+export TODOIST_API_TOKEN="your-token"
+export CLOUDFLARE_API_TOKEN="your-token"
+EOF
+chmod 600 ~/.claude-env
+
+# Tell Claude Code to source it
+echo 'export CLAUDE_ENV_FILE=~/.claude-env' >> ~/.bashrc
+source ~/.bashrc
+```
+
+Option B: **direnv** (auto-loads per directory):
 ```bash
 # Install: sudo apt install direnv
 # Add to ~/.bashrc: eval "$(direnv hook bash)"
@@ -26,11 +42,11 @@ export VIKUNJA_TOKEN="your-api-token"
 export TODOIST_API_TOKEN="your-token"
 export CLOUDFLARE_API_TOKEN="your-token"
 EOF
-
+chmod 600 ~/.envrc
 direnv allow ~/.envrc
 ```
 
-Option B: **Per-session** (most secure - doesn't persist):
+Option C: **Per-session** (most secure - doesn't persist):
 ```bash
 export VIKUNJA_URL="https://your-instance.com"
 export VIKUNJA_TOKEN="your-api-token"

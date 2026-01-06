@@ -6,11 +6,12 @@
 2. **Increase font** - `Ctrl++` (3-4x)
 3. **OBS ready** - Window capture on terminal
 4. **Ensure uv is installed**: `curl -LsSf https://astral.sh/uv/install.sh | sh`
-5. **Set env vars** (per-session, before starting Claude Code):
+5. **Set env vars** (for demo, per-session is fine):
    ```bash
    export VIKUNJA_URL="https://try.vikunja.arcforge.au"
    export VIKUNJA_TOKEN="tk_581fe5bcf3ac77e96bfed84e0b2791adff50c206"
    ```
+   > For persistent setup, use `CLAUDE_ENV_FILE` - see README.md
 
 ---
 
