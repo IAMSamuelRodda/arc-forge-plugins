@@ -29,6 +29,19 @@ After:  2 tools  → 800 tokens (95% reduction)
 
 ## Installation
 
+### Demo
+
+https://github.com/IAMSamuelRodda/arc-forge-plugins/raw/master/demo/marketplace-install-part1.mp4
+
+> *Click to view installation demo*
+
+### Prerequisites
+
+Python plugins require `uv` for zero-setup installation:
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
 ### Add Marketplace
 
 ```bash
@@ -41,10 +54,25 @@ After:  2 tools  → 800 tokens (95% reduction)
 # Install specific plugin
 /plugin install mcp-proxy@arc-forge-plugins
 /plugin install vikunja-mcp@arc-forge-plugins
-
-# Or install all
-/plugin install mcp-proxy vikunja-mcp todoist-mcp youtube-transcript-mcp cloudflare-mcp
 ```
+
+### Environment Variables
+
+Each plugin requires credentials via environment variables:
+
+```bash
+# vikunja-mcp
+export VIKUNJA_URL="https://your-instance.com"
+export VIKUNJA_TOKEN="your-api-token"
+
+# todoist-mcp
+export TODOIST_API_TOKEN="your-token"
+
+# cloudflare-mcp
+export CLOUDFLARE_API_TOKEN="your-token"
+```
+
+Set these before starting Claude Code, then restart after installing plugins.
 
 ## Demo: Aggregated Setup
 
